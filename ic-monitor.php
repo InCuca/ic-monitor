@@ -9,7 +9,7 @@
  * Domain Path:     /languages
  * Version:         0.1.0
  *
- * @package         InCuca
+ * @package         IC_Monitor
  */
 
 if ( ! function_exists( 'ic_get_blocked_attacks' ) ) {
