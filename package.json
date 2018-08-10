@@ -4,7 +4,9 @@
   "main": "Gruntfile.js",
   "author": "INCUCA",
   "scripts": {
-    "build": "grunt"
+    "build": "grunt",
+    "test": "phpunit",
+    "lint": "phpcs"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
