@@ -17,16 +17,20 @@ if ( ! function_exists( 'ic_get_blocked_attacks' ) ) {
 	 * Return the number of blocked attacks
 	 */
 	function ic_get_blocked_attacks() {
+		var_dump( 'called' );
 		return 0;
 	}
-	add_action(
-		'rest_api_init', function () {
-			register_rest_route(
-				'incuca/v1', '/blocked-attacks', array(
-					'methods'  => 'GET',
-					'callback' => 'ic_get_blocked_attacks',
-				)
-			);
-		}
-	);
 }
+
+if ( ! function_exists( 'ic_register_endpoints' ) ) {
+	function ic_register_endpoints() {
+		register_rest_route(
+			'incuca/v1', '/blocked-attacks', array(
+				'methods'  => 'GET',
+				'callback' => 'ic_get_blocked_attacks',
+			)
+		);
+	}
+	add_action( 'rest_api_init', 'ic_register_endpoints' );
+}
+
