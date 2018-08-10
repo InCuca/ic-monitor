@@ -17,7 +17,6 @@ if ( ! function_exists( 'ic_get_blocked_attacks' ) ) {
 	 * Return the number of blocked attacks
 	 */
 	function ic_get_blocked_attacks() {
-		var_dump( 'called' );
 		return 0;
 	}
 }

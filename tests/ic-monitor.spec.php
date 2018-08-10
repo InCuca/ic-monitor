@@ -16,6 +16,6 @@ class IcMonitor extends WP_UnitTestCase {
 		$req = new WP_REST_Request( 'GET', '/incuca/v1/blocked-attacks' );
 		$res = rest_do_request( $req );
 		$this->assertEquals( 200, $res->status );
-
+		$this->assertEquals( 0, $res->data );
 	}
 }
