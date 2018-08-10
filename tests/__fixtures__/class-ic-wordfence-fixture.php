@@ -15,6 +15,7 @@ class IC_Wordfence_Fixture {
 		array_pop( $queries ); // remove last empty string
 
 		foreach ( $queries as $query ) {
+			// FIXME: not adding tables for some reason
 			$this->db->query( $query );
 		}
 	}

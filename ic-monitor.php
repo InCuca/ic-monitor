@@ -17,7 +17,23 @@ if ( ! function_exists( 'ic_get_blocked_attacks' ) ) {
 	 * Return the number of blocked attacks
 	 */
 	function ic_get_blocked_attacks() {
-		return 0;
+		global $wpdb;
+		$server_tables = $wpdb->get_results( 'SHOW TABLES' );
+		// TODO: Check against server_tables
+		$tables = array(
+			'wfBlocks7',
+			'wfBlockedCommentLog',
+			'wfBlockedIPLog',
+			'wfBlocks7',
+		);
+		$count  = 0;
+		foreach ( $tables as $table ) {
+			$table  = $wpdb->prefix . $table;
+			$count += $wpdb->get_var(
+				$wpdb->prepare( 'SELECT COUNT(*) FROM `%s`;', $table )
+			);
+		}
+		return $count;
 	}
 }
 
