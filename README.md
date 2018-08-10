@@ -17,16 +17,6 @@ WordPress plugin to expose website data through REST API
 
 This section describes how to install the plugin and get it working.
 
-## Frequently Asked Questions ##
-
-### A question that someone might have ###
-
-An answer to that question.
-
-### What about foo bar? ###
-
-Answer to foo bar dilemma.
-
 ## Screenshots ##
 
 ### 1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from ###
