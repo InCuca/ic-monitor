@@ -1,6 +1,6 @@
 <?php
 /**
- * Class SampleTest
+ * Class IcMonitor
  *
  * PHPUnit 5.1 doc https://phpunit.de/manual/5.1/en/index.html
  * WP_UnitTestCase doc https://github.com/rnagle/wordpress-unit-tests/blob/master/includes/factory.php
@@ -11,13 +11,13 @@
 /**
  * Sample test case.
  */
-class SampleTest extends WP_UnitTestCase {
+class IcMonitor extends WP_UnitTestCase {
+
 
 	/**
-	 * A single example test.
+	 * It register /incuca/v1/blocked-attacks endpoint
 	 */
-	function test_sample() {
-		// Replace this with some actual testing code.
-		$this->assertTrue( true );
+	function itRegisterEndpoint() {
+		$this->markTestSkipped('please implement this test');
 	}
 }
