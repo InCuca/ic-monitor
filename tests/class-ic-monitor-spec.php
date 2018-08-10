@@ -22,16 +22,14 @@ class IC_Monitor_Spec extends WP_UnitTestCase {
 	 */
 	function testReturnsWordfenceBlockedAttacksThroughEndpoint() {
 		global $wpdb;
-		$mock = new IC_Wordfence_Fixture( $wpdb );
-		$mock->setup();
+		$wf = new IC_Wordfence_Fixture( $wpdb );
+		$wf->setup();
 
 		do_action( 'rest_api_init' );
 		$req = new WP_REST_Request( 'GET', '/incuca/v1/blocked-attacks' );
 		$res = rest_do_request( $req );
 
 		$this->assertEquals( 200, $res->status );
-		$this->assertEquals( 0, $res->data );
-
-		$mock->teardown();
+		$this->assertEquals( 3, $res->data );
 	}
 }
