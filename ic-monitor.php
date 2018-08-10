@@ -9,16 +9,24 @@
  * Domain Path:     /languages
  * Version:         0.1.0
  *
- * @package         Ic_Monitor
+ * @package         InCuca
  */
 
-add_action(
-	'rest_api_init', function () {
-		register_rest_route(
-			'myplugin/v1', '/author/(?P<id>\d+)', array(
-				'methods'  => 'GET',
-				'callback' => 'my_awesome_func',
-			)
-		);
+if ( ! function_exists( 'ic_get_blocked_attacks' ) ) {
+	/**
+	 * Return the number of blocked attacks
+	 */
+	function ic_get_blocked_attacks() {
+		return 0;
 	}
-);
+	add_action(
+		'rest_api_init', function () {
+			register_rest_route(
+				'incuca/v1', '/blocked-attacks', array(
+					'methods'  => 'GET',
+					'callback' => 'ic_get_blocked_attacks',
+				)
+			);
+		}
+	);
+}
