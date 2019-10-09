@@ -1,4 +1,4 @@
-# Ic Monitor #
+# Wp Monitor #
 **Donate link:** https://incuca.net  
 **Tags:** rest, api  
 **Requires at least:** 4.4  
